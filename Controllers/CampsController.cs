@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 namespace CoreCodeCamp.Controllers
 {
     [Route("api/[controller]")]
+    [ApiVersion("3.0")]
     [ApiController]
     public class CampsController : ControllerBase
     {
@@ -40,6 +41,7 @@ namespace CoreCodeCamp.Controllers
         }
 
         [HttpGet("{moniker}")]
+        [MapToApiVersion("3.0")]
         public async Task<ActionResult<CampModel>> Get(string moniker)
         {
             try
