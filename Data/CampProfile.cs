@@ -8,9 +8,8 @@ namespace CoreCodeCamp.Data
         public CampProfile()
         {
             CreateMap<Camp, CampModel>()
-                .ForMember(c => c.Venue, o => o.MapFrom(m => m.Location.VenueName)).ReverseMap();
-            CreateMap<Talk, TalkModel>().ReverseMap();
-            CreateMap<Speaker, SpeakerModel>().ReverseMap();
+                .ForMember(c => c.Venue, o => o.MapFrom(m => m.Location.VenueName))
+                .ReverseMap();           
         }
     }
 }
